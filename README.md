@@ -1,6 +1,6 @@
 # sgm
 semi global mathcing on gpu (original repo: https://github.com/dhernandez0/sgm)
 
-cd src
-cd semi_global_matching
-python setup.py build develop
+cd src\n
+cd semi_global_matching\n\n
+python setup.py build develop\n
