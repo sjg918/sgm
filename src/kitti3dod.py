@@ -182,7 +182,7 @@ def project_disp_to_points(calib, disp, max_high):
     depth = calib.f_u * baseline / (disp + 1. - mask)
     rows, cols = depth.shape
     c, r = np.meshgrid(np.arange(cols), np.arange(rows))
-    c = c + TOP_CUT
+    r = r + TOP_CUT
     points = np.stack([c, r, depth])
     points = points.reshape((3, -1))
     points = points.T
