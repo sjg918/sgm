@@ -19,10 +19,10 @@ void SemiGlobalMatchingCudaLauncher(
     const uint8_t * left, const uint8_t * right, uint32_t * d_transform0, uint32_t * d_transform1, uint8_t * d_cost,
     uint8_t * d_L0, uint8_t * d_L1, uint8_t * d_L2, uint8_t * d_L3, uint8_t * d_L4, uint8_t * d_L5, uint8_t * d_L6, uint8_t * d_L7,
     uint8_t * d_disparity, uint8_t * d_disparity_filtered_uchar,
-    const int p1, const int p2, const int rows, const int cols
+    const int p1, const int p2, const int rows, const int cols, const int pathA
 );
 
-at::Tensor sgm(const at::Tensor left, const at::Tensor right, const int p1, const int p2, const int rows, const int cols) {
+at::Tensor sgm(const at::Tensor left, const at::Tensor right, const int p1, const int p2, const int rows, const int cols, const int pathA) {
     //CHECK_INPUT(left);
     //CHECK_INPUT(right);
 
@@ -48,13 +48,13 @@ at::Tensor sgm(const at::Tensor left, const at::Tensor right, const int p1, cons
     uint8_t * d_disparity_ = d_disparity.data_ptr<uint8_t>();
     uint8_t * d_disparity_filtered_uchar_ = d_disparity_filtered_uchar.data_ptr<uint8_t>();
     uint8_t * d_L0_ = d_L0.data_ptr<uint8_t>();
-    uint8_t * d_L1_ = d_L0.data_ptr<uint8_t>();
-    uint8_t * d_L2_ = d_L0.data_ptr<uint8_t>();
-    uint8_t * d_L3_ = d_L0.data_ptr<uint8_t>();
-    uint8_t * d_L4_ = d_L0.data_ptr<uint8_t>();
-    uint8_t * d_L5_ = d_L0.data_ptr<uint8_t>();
-    uint8_t * d_L6_ = d_L0.data_ptr<uint8_t>();
-    uint8_t * d_L7_ = d_L0.data_ptr<uint8_t>();
+    uint8_t * d_L1_ = d_L1.data_ptr<uint8_t>();
+    uint8_t * d_L2_ = d_L2.data_ptr<uint8_t>();
+    uint8_t * d_L3_ = d_L3.data_ptr<uint8_t>();
+    uint8_t * d_L4_ = d_L4.data_ptr<uint8_t>();
+    uint8_t * d_L5_ = d_L5.data_ptr<uint8_t>();
+    uint8_t * d_L6_ = d_L6.data_ptr<uint8_t>();
+    uint8_t * d_L7_ = d_L7.data_ptr<uint8_t>();
 
     const int rows_ = rows;
     const int cols_ = cols;
@@ -63,7 +63,7 @@ at::Tensor sgm(const at::Tensor left, const at::Tensor right, const int p1, cons
         left_, right_, d_transform0_, d_transform1_, d_cost_,
         d_L0_, d_L1_, d_L2_, d_L3_, d_L4_, d_L5_, d_L6_, d_L7_,
         d_disparity_, d_disparity_filtered_uchar_,
-        p1, p2, rows_, cols_
+        p1, p2, rows_, cols_, pathA
     );
 
     return d_disparity_filtered_uchar;
