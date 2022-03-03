@@ -13,4 +13,6 @@ cd src<br/>
 cd semi_global_matching<br/>
 python setup.py build develop<br/>
 
+# RTX TITAN
 4path(7, 92) : 0.0034623489736372018
+8path(6, 96) : 0.004814395843885297
