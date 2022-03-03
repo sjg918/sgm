@@ -25,7 +25,7 @@
 #include <stdio.h>
 #include <iostream>
 
-#define PATH_AGGREGATION	8
+//#define PATH_AGGREGATION	4
 #define	MAX_DISPARITY		128
 #define CENSUS_WIDTH		9
 #define CENSUS_HEIGHT		7
