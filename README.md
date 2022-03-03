@@ -14,8 +14,8 @@ cd semi_global_matching<br/>
 python setup.py build develop<br/>
 
 # time performance
-2path(7, 84) : 0.003261395271514925ms
+2path(7, 84) : 0.003261395271514925s
 
-4path(7, 92) : 0.003544897189676149ms
+4path(7, 92) : 0.003544897189676149s
 
-8path(6, 96) : 
+8path(6, 96) : 0.004807569295199617s
