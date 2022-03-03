@@ -1,6 +1,7 @@
 
 # semi global matching on gpu (pytorch build)
 original repo: https://github.com/dhernandez0/sgm<br/>
+My results do not match the original perfectly<br/>
 
 # result on kitti (RTX TITAN)
 ![image](https://github.com/sjg918/sgm/blob/main/image.png?raw=true)
