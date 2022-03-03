@@ -1070,3 +1070,4 @@ void SemiGlobalMatchingCudaLauncher(
 
     MedianFilter3x3<<<(rows*cols+MAX_DISPARITY-1)/MAX_DISPARITY, MAX_DISPARITY>>>(d_disparity, d_disparity_filtered_uchar, rows, cols);
 }
+
