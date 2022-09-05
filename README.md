@@ -17,3 +17,6 @@ ori iamge<br/>
 cd src<br/>
 cd semi_global_matching<br/>
 python setup.py build develop<br/>
+
+# Identified issues
+If your version of pytorch is higher, comment out #include <THC/THC.h> in line 12 of semi_global_matching_cuda.cu file and insert #include <ATen/cuda/CUDAEvent.h> below it.
