@@ -1,5 +1,5 @@
 
-# semi global matching on gpu (pytorch build)
+# semi global matching on gpu (pytorch extension)
 original repo: https://github.com/dhernandez0/sgm<br/>
 My result does not match the original perfectly<br/>
 
