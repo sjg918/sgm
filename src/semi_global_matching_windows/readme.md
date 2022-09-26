@@ -1,6 +1,5 @@
 python setup.py install
 
-visual studio 2019
 pytorch == 1.21.1
 
 nvcc: NVIDIA (R) Cuda compiler driver
